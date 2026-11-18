@@ -1,17 +1,17 @@
 questions = [
     {
         "text": "It's a rainy day night. What are you doing?",
-        "choices": {
+        "choice": {
             "1": "studying for tests",
             "2": "shopping online for new clothes because you can never get enough",
-            "3": "cooking up a mid-night snack for yourself",
-            "4": "binging a tv show under your blankets while you rot in bed",
+            "3": "concocting up a mid-night snack for yourself",
+            "4": "binging a tv show under your warm blankets",
             "5": "on a call with your best friend"
         }
     },
     {
         "text": "what is your favorite season?",
-        "choices": {
+        "choice": {
             "1":"winter",
             "2":"autumn",
             "3":"spring",
@@ -22,33 +22,53 @@ questions = [
     {
         "text": "What is your favorite dessert?",
         "choice": {
-            "1": "tiramisu"
-            "2": ""
-            "3": "milk"
-            "4": "caramel machiatto"
+            "1": "tiramisu",
+            "2": "water",
+            "3": "milk",
+            "4": "caramel machiatto",
             "5": "brown sugar milk tea"
         }
-    }
+    },
     {
          "text": "Which animals resonates with you the most",
         "choice": {
-            "1": "raven"
-            "2": "snake"
-            "3": "butterfly"
-            "4": "cat"
+            "1": "raven",
+            "2": "snake",
+            "3": "butterfly",
+            "4": "cat",
             "5": "dove"
         }
-    }
+    },
+    {
+         "text": "Pick a hobby",
+        "choice": {
+            "1": "chess",
+            "2": "painting",
+            "3": "writing",
+            "4": "archery",
+            "5": "dancing"
+        }
+    },
+    {
+         "text": "Pick a time of day",
+        "choice": {
+            "1": "twilight",
+            "2": "midnight",
+            "3": "dawn",
+            "4": "sunset",
+            "5": "sunrise"
+        }
+    },
     {
          "text": "Choose a superpower",
         "choice": {
-            "1": "invisibility"
-            "2": "immortality"
-            "3": "animal-communication"
-            "4": "teleportation"
+            "1": "invisibility",
+            "2": "immortality",
+            "3": "animal-communication",
+            "4": "teleportation",
             "5": "flying"
         }
-    }
+    },
     {
          "text": "Pick a nature landscape",
         "choice": {
@@ -58,7 +78,7 @@ questions = [
             "4": "lily-pad pond",
             "5": "bubbling creek"
         }
-    }
+    },
     {
          "text": "Which quote resonates with you the most",
         "choice": {
@@ -73,24 +93,34 @@ questions = [
 ]
 results = {
     "1": "Crime and Punishment: You're morally grey",
-    "2": "The Picture of Dorian Gray: You're an artist",
-    "3": "Alice and Wonderland: You don't really belong, in a good way!",
+    "2": "The Picture of Dorian Gray: You're an good artist not much of a good person though",
+    "3": "Alice and Wonderland: You don't really belong, in a good way! In another world, you exist as a mushroom",
     "4": "A Court of Thorns and Roses: You give main character vibes.",
     "5": "Howl's Moving Castle: You're a sweet innocent person."
 }
-numEach = [0,0,0,0,0]
+numEach = [0,0,0,0,0,0]
 
 def run(): 
-    print()"Welcome! Answer questions to find out which book suits you the most!")
+    print("Answer questions to find out which book suits you the most!")
     for questionNum in range(len(questions)):
         getQuestion(questionNum)
+        choiceNum = int(input())
+        numEach[choiceNum - 1] += 1
+        print()
+    getResults()
 
 def getQuestion(num):
-    test = questions[num]["text"]
-    print[text]
-    choices = question[num]["choices"]
-    for i in range(len(choices)):
-        print(f"(i + 1). (choices[f"(i + 1)"))
+    text = questions[num]["text"]
+    print(text)
+    choice = questions[num]["choice"]
+    for i in range(len(choice)):
+        print(f"{i + 1}. {choice[f"{i + 1}"]}")
+def getResults(): #get the most recurrent choice
+    max_value = max(numEach)
+    max_index = numEach.index(max_value)
+    print(results[f"{max_index + 1}"])
+
+run()
 
 
 
