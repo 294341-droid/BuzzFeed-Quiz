@@ -22,9 +22,9 @@ questions = [
     {
         "text": "What is your favorite dessert?",
         "choice": {
-            "1": "tiramisu",
-            "2": "water",
-            "3": "milk",
+            "1": "tiramisu/coffee cake",
+            "2": "lava cake",
+            "3": "apple pie",
             "4": "caramel machiatto",
             "5": "brown sugar milk tea"
         }
@@ -77,6 +77,26 @@ questions = [
             "3": "mossy forest",
             "4": "lily-pad pond",
             "5": "bubbling creek"
+        }
+    },
+    {
+         "text": "Pick one of the seven sins",
+        "choice": {
+            "1": "wrath",
+            "2": "greed",
+            "3": "gluttony",
+            "4": "envy",
+            "5": "sloth"
+        }
+    },
+    {
+         "text": "Pick a mythical creature",
+        "choice": {
+            "1": "werewolf",
+            "2": "vampire",
+            "3": "fairy",
+            "4": "unicorn",
+            "5": "mermaid"
         }
     },
     {
